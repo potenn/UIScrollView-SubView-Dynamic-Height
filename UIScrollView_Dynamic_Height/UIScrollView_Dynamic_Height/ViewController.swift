@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dynamicView: UIView!
+    
+    @IBOutlet weak var dynamicHeightOfGreenView: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //You can change height of UIView using NSLayoutConstraint.constant
+        dynamicHeightOfGreenView.constant = 1000.0
+        
+
     }
 
     override func didReceiveMemoryWarning() {

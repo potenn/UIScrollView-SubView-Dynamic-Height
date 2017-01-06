@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIScrollView_Dynamic_Height" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCw-mL-dCM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-kT-Xrp">
+                                        <rect key="frame" x="67" y="368" width="240" height="198"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="198" id="VJE-2C-Cuy"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NT-Qw-7Gy">
+                                        <rect key="frame" x="67" y="53" width="240" height="167"/>
+                                        <color key="backgroundColor" red="0.62745098040000002" green="0.7843137255" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5NT-Qw-7Gy" firstAttribute="centerX" secondItem="QCw-mL-dCM" secondAttribute="centerX" id="0tn-7E-yPI"/>
+                                    <constraint firstItem="sSk-kT-Xrp" firstAttribute="top" secondItem="5NT-Qw-7Gy" secondAttribute="bottom" constant="148" id="12K-bG-A4h"/>
+                                    <constraint firstItem="5NT-Qw-7Gy" firstAttribute="height" secondItem="QCw-mL-dCM" secondAttribute="height" constant="-500" id="LHM-E4-NKT"/>
+                                    <constraint firstItem="5NT-Qw-7Gy" firstAttribute="top" secondItem="QCw-mL-dCM" secondAttribute="top" constant="53" id="R0p-CH-XZl"/>
+                                    <constraint firstAttribute="bottom" secondItem="sSk-kT-Xrp" secondAttribute="bottom" constant="140" id="VMX-4X-IbQ"/>
+                                    <constraint firstItem="sSk-kT-Xrp" firstAttribute="top" secondItem="5NT-Qw-7Gy" secondAttribute="bottom" constant="148" id="WdE-N4-HZi"/>
+                                    <constraint firstAttribute="trailing" secondItem="5NT-Qw-7Gy" secondAttribute="trailing" constant="68" id="eYK-9J-8w2"/>
+                                    <constraint firstAttribute="trailing" secondItem="sSk-kT-Xrp" secondAttribute="trailing" constant="68" id="gRp-Nt-p4f"/>
+                                    <constraint firstItem="sSk-kT-Xrp" firstAttribute="leading" secondItem="QCw-mL-dCM" secondAttribute="leading" constant="67" id="yJI-VF-avZ"/>
+                                    <constraint firstItem="5NT-Qw-7Gy" firstAttribute="leading" secondItem="QCw-mL-dCM" secondAttribute="leading" constant="67" id="yje-4o-4TQ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QCw-mL-dCM" secondAttribute="trailing" id="NF5-lB-Wss"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QCw-mL-dCM" secondAttribute="bottom" id="YjW-dN-1RF"/>
+                            <constraint firstItem="QCw-mL-dCM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aBL-ge-dIp"/>
+                            <constraint firstItem="QCw-mL-dCM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xJv-hb-Ulg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dynamicHeightOfGreenView" destination="LHM-E4-NKT" id="TrE-nZ-3ls"/>
+                        <outlet property="dynamicView" destination="5NT-Qw-7Gy" id="rmn-bu-iX2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
